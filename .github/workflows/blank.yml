@@ -13,10 +13,12 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.2
         
       - name: Azure Login
-        uses: Azure/login@v2.3.0
+        uses: Azure/login@v3
+        
+        
 
       - name: terraform-fmt
         id: fmt
