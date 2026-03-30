@@ -24,7 +24,7 @@ jobs:
         
         
 
-      - name: terraform-fmt
+      - name: terraform fmt
         id: fmt
         run: terraform fmt
         working-directory: environment/dev
