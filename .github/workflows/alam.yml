@@ -46,6 +46,7 @@ jobs:
 
 
   terraform-apply:
+    needs: terraform-init-plan
     runs-on: self-hosted
     steps:
       - name: checkout
