@@ -43,5 +43,24 @@ jobs:
         id: plan
         run: terraform plan
         working-directory: environment/dev
+
+jobs:
+  terraform-apply
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: terraform-init
+        id: init
+        run: terraform init
+        working-directory: environment/dev
+   
+      - name: terraform-apply
+        id: apply
+        run: terraform apply --auto-approve
+        working-directory: environment/dev
+
+       
         
   
