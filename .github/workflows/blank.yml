@@ -51,6 +51,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6.0.2
 
+      - name: Azure Login
+        uses: Azure/login@v3
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+
       - name: terraform-init
         id: init
         run: terraform init
